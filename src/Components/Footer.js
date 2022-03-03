@@ -6,11 +6,13 @@ const Footer = ({ setTheme }) => {
             <div onClick={() => {
                 setTheme('school-days')
             }} className='footer-item'>School Days</div>
-            <div onClick={() =>{
+            <div onClick={() => {
                 setTheme('neon-nights')
             }} className='footer-item'>Neon Nights</div>
-            <div className='footer-item'>Kuai</div>
             <div onClick={() =>{
+                setTheme('kauai')
+            }} className='footer-item'>Kauai</div>
+            <div onClick={() => {
                 setTheme('boring')
             }} className='footer-item'>Boring</div>
         </div>

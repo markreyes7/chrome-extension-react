@@ -7,7 +7,7 @@ import Form from './Components/Form';
 import TodoItem from './Components/TodoItem';
 
 function App() {
-  const [theme, setTheme] = useState('boring')
+  const [theme, setTheme] = useState('school-days')
   const [todo, setTodo] = useState()
   const [todoList, setToDoList] = useState([])
   const [todoToRemove, setTodoToRemove] = useState()
@@ -15,18 +15,17 @@ function App() {
 
   useEffect(() => {
     var saved = localStorage.getItem("todo-list");
-    
     let savedList = () => (saved !== null) ? saved.split(',') : [];
-    
     setToDoList(savedList)
-  },[])
+  }, [])
+
 
   return (
     <div className="App">
       <div className={theme}>
         <Header></Header>
         <Form todo={todo} setTodo={setTodo} setToDoList={setToDoList} todoList={todoList} todoToRemove={todoToRemove}></Form>
-        {(typeof todo === "undefined") ? (<p>hello</p>) :
+        {(typeof todoList === undefined) ? (<p>add to your damn list</p>) :
           <TodoList listItems={todoList} setTodoToRemove={setTodoToRemove}>
 
           </TodoList>}

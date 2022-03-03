@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 const Form = ({ setTodo, todo, setToDoList, todoList, todoToRemove }) => {
     const [value, setValue] = useState('');
     const [addOrRemove, setAddOrRemove] = useState('');
+    const [priority, setPriority] = useState(false)
 
 
     const handleChange = e => {
@@ -13,6 +14,11 @@ const Form = ({ setTodo, todo, setToDoList, todoList, todoToRemove }) => {
     const onSubmit = (e) => {
         e.preventDefault();
     };
+
+
+    useEffect(() => {
+        console.log(`priority is  ${priority}`)
+    }, [priority])
 
     useEffect(() => {
         const timer = setTimeout(async () => {
@@ -25,7 +31,7 @@ const Form = ({ setTodo, todo, setToDoList, todoList, todoToRemove }) => {
                 console.log(todoList)
                 console.log("Added")
             }
-            else if(addOrRemove === "remove"){
+            else if (addOrRemove === "remove") {
                 if (todoList === []) return
                 localStorage.setItem("todo-list", todoList)
                 console.log(todoList)
@@ -44,6 +50,12 @@ const Form = ({ setTodo, todo, setToDoList, todoList, todoToRemove }) => {
                 <label htmlFor="text">Enter your todos.
                     <input type="text" value={value} onChange={handleChange} />
                     <button onClick={() => {
+                        if (priority) {
+                            setTodo(value);
+                            setToDoList(prevTodos => [value, ...prevTodos])
+                            setAddOrRemove("add");
+                            return
+                        }
                         setTodo(value);
                         setToDoList(prevTodos => [...prevTodos, value]);
                         setAddOrRemove("add");
@@ -56,7 +68,7 @@ const Form = ({ setTodo, todo, setToDoList, todoList, todoToRemove }) => {
                     }
                     }>Remove me</button>
                 </label>
-                <input type="checkbox" />
+                <input type="checkbox" onChange={() => setPriority(!priority)} />
                 <span>Priority?</span>
             </div>
             <div className="form-example">

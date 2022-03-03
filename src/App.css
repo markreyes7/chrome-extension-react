@@ -1,5 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url(https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap);
+
+:root{
+  --neon-border-color: #08f;
+  --neon-border-color2:rgba(0, 156, 0, 0.863);
+  --neon-text-color:#F975F7;
+  --neon-text-color2: rgb(211, 55, 55);
+  
+  --neon-text-color3: #08f;
+}
+
 .App {
   text-align: center;
+}
+
+li{
+  cursor: pointer;
+}
+
+input{
+  background: none;
+  
 }
 
 .footer{
@@ -10,13 +33,217 @@
 
 .footer-item{
   margin: 10px;
+  cursor: pointer;
 }
 
 .school-days{
-  background-color: green;
+  background: linear-gradient(90deg, #52814b 10%, #46974f 90%);
+  color: white;
+  font-family: "Walter Turncoat", cursive;
+  border-radius: 10px;
+  border: #B78240 solid 10px;
+}
+
+.school-days input[type="text"]{
+  font-family: "Walter Turncoat", cursive;
   color: white;
 }
 
 .neon-nights{
   background-color: black;
+  color: white;
 }
+
+.sign{
+  display: flex;
+  justify-content: center;
+  
+}
+.neon-nights h1{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color) ;
+  filter: drop-shadow(2px 2px 20px var(--neon-text-color));
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0.2rem solid #fff;
+  border-radius: 0.5rem;
+  animation: flickerTitle 7.5s infinite alternate;     
+}
+
+.neon-nights h3{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color2) ;
+  filter: drop-shadow(2px 2px 20px var(--neon-text-color2));
+  animation: flickerQuote 2.5s infinite alternate;
+  margin: 30px 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.neon-nights label{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color3);
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff;
+}
+
+.neon-nights button{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color3);
+  background: none;
+  border: none;
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff;
+  cursor: pointer;
+
+}
+
+.neon-nights input[type="text"]{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color);
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff;
+}
+
+.neon-nights span{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color2);
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff;
+}
+
+.neon-nights ul{
+  border: 0.2rem solid #fff;
+  border-radius: 0.5rem;
+  padding: 25px 5px ;
+  animation: flickerList 7.5s infinite alternate;
+  margin: 15px 35px;
+}
+
+.neon-nights li{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color) ;
+  filter: drop-shadow(2px 2px 20px var(--neon-text-color));
+  animation: flickerListItem 7.5s infinite alternate;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+
+
+.neon-nights .footer-item{
+  font-family: 'Exo 2', sans-serif;
+  color: var(--neon-text-color) ;
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff,
+  0.2rem 0.2rem 0.4rem #fff;
+}
+
+.kauai{
+  background: linear-gradient(180deg, #f9e697 40%, #a7d0ec 80%);
+  font-family: 'Manrope', sans-serif;
+}
+.kauai button{
+  font-family: 'Manrope', sans-serif;
+  cursor: pointer;
+  background: none;
+
+}
+.kauai button:hover{
+ border: 10px blue;
+}
+
+.kauai 
+.neon-nights input[type="text"]{
+  font-family: 'Manrope', sans-serif;
+  color: var(--neon-text-color);
+  text-shadow: -0.1rem -0.1rem 0.2rem #fff;
+}
+
+
+
+@keyframes flickerTitle {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+    text-shadow:
+    -0.2rem -0.2rem 0.1rem #fff,
+    0.2rem 0.2rem 0.4rem #fff,
+    0 0 0rem var(--neon-text-color),
+    0 0 0.5rem var(--neon-text-color),
+    0 0 0.5rem var(--neon-text-color),
+    0 0 0.7rem var(--neon-text-color),
+    0 0 1rem var(--neon-text-color);
+      
+      box-shadow:
+          0 0 .2rem #fff,
+          inset 0 0 .2rem #fff,
+          0 0 0.9rem var(--neon-border-color),
+          inset 0 0 0.4rem var(--neon-border-color),
+          0 0 1rem var(--neon-border-color),
+          inset 0 0 1rem var(--neon-border-color);        
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+}
+
+@keyframes flickerQuote{
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+
+    text-shadow:
+    -0.1rem -0.1rem 0.1rem rgba(255, 255, 255, 0.753),
+    0.1rem 0.1rem 0.3rem rgba(255, 255, 255, 0.753),
+    0 0 0rem var(--neon-text-color2);
+      
+
+    box-shadow:
+    0 0 .2rem #fff,
+    inset 0 0 .2rem #fff,
+    0 0 0.3rem var(--neon-border-color2),
+    inset 0 0 0.3rem var(--neon-border-color2),
+    0 0 0.3rem var(--neon-border-color2),
+    inset 0 0 0.3rem var(--neon-border-color2);  
+         
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }
+  }
+
+  @keyframes flickerList{
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow:
+    0 0 .2rem #fff,
+    inset 0 0 .2rem #fff,
+    0 0 0.3rem var(--neon-border-color),
+    inset 0 0 0.3rem var(--neon-border-color),
+    0 0 0.3rem var(--neon-border-color),
+    inset 0 0 0.3rem var(--neon-border-color);
+    }  
+    20%, 24%, 55% {        
+      text-shadow: none;
+      box-shadow: none;
+  }    
+  }
+  @keyframes flickerListItem{
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+      text-shadow:
+    -0.2rem -0.2rem 0.4rem #fff,
+    0.2rem 0.2rem 0.2rem #fff,
+    0 0 0rem var(--neon-text-color),
+    0 0 0.3rem var(--neon-text-color),
+    0 0 0.5rem var(--neon-text-color),
+    0 0 0.7rem var(--neon-text-color),
+    0 0 1rem var(--neon-text-color);
+
+    }
+
+    20%, 24%, 55% {
+      text-shadow: none;
+    }
+  }
